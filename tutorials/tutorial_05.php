@@ -37,3 +37,21 @@ foreach ($csvfile as $value) {
     echo "<br>";
 }
 ?>
+<html>
+    <head></head>
+    <body>
+        <h2>Showing Student List from Csv file</h2>
+        <table style="width : 400px;border : 1px solid #000;border-collapse: collapse;text-align:center;">
+            <?php
+                $file = fopen("files/StudentList.csv",'r');
+                while(($data = fgetcsv($file)) == true){
+                    echo "<tr>";
+                        foreach ($data as $value) {
+                            echo "<td>$value</td>";
+                        }
+                    echo "</tr>";
+                }
+            ?>
+        </table>
+    </body>
+</html>
