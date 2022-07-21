@@ -9,28 +9,33 @@
     body {
       background-color : #808080;
     }
+    h1 {
+      color : #fff;
+      text-align : center;
+    }
   </style>
 </head>
 <body>
+  <h1>Tutorial-01</h1>
   <table style="width:400px;margin:50px auto";>
     <?php
-      $total = 0;
-      for ($i=0; $i < 8 ; $i++) { 
-        echo "<tr>";
-          $total = $i;
-          for ($j=0; $j <8 ; $j++) { 
-            if($total %2 == 0){
-              echo "<td style='width:20px;height:40px;background-color:#fff;'></td>";
-              $total++;
-            }else{
-              echo "<td style='width:20px;height:40px;background-color:#000;'></td>";
-              $total++;
+        $total = 0;
+        for ($row = 0; $row < 8; $row++) {
+            echo "<tr>";
+            $total = $row;
+            for ($col = 0; $col < 8; $col++) {
+                if ($total % 2 == 0) {
+                    echo "<td style='width:20px;height:40px;background-color:#fff;'></td>";
+                    $total++;
+                } else {
+                    echo "<td style='width:20px;height:40px;background-color:#000;'></td>";
+                    $total++;
+                }
             }
-          }
-        echo "</tr>";
-      }
+            echo "</tr>";
+        }
     ?>
   </table>
-  
+
 </body>
-</html> 
+</html>
