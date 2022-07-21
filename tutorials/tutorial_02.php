@@ -1,22 +1,34 @@
-<?php
-    $size = 6;
-    for ($i=1; $i <=$size ; $i++) { 
-        for ($j=$size; $j > $i ; $j--) { 
-            echo "&nbsp;&nbsp;";
-        }
-        for ($k=0; $k < $i*2-1 ; $k++) { 
-            echo "*";
-        }
-        echo "<br>";
-    }
+<html>
+    <head>
+    <title>Diamond Shape</title>
+    <style>
+    </style>
+    </head>
+    <body>
+        <div style="margin-left:30%;margin-top:50px;">
+            <h2>Diamond Shape</h2>
+            <?php
+                $size = 6;
+                for ($row=1; $row <=$size ; $row++) { 
+                    for ($space=$size; $space > $row ; $space--) { 
+                        echo "&nbsp;&nbsp;";
+                    }
+                    for ($star=0; $star < $row*2-1 ; $star++) { 
+                        echo "*";
+                    }
+                    echo "<br>";
+                }
 
-    for ($i=1; $i <= $size ; $i++) { 
-        for ($j=0; $j < $i ; $j++) { 
-            echo "&nbsp;&nbsp;";
-        }
-        for ($k=($size - $i)*2-1; $k > 0 ; $k--) { 
-            echo "*";
-        }
-        echo "<br>";
-    }
-?>
+                for ($row=1; $row <= $size ; $row++) { 
+                    for ($space=0; $space < $row ; $space++) { 
+                        echo "&nbsp;&nbsp;";
+                    }
+                    for ($star=($size - $row)*2-1; $star > 0 ; $star--) { 
+                        echo "*";
+                    }
+                    echo "<br>";
+                }
+            ?>
+        </div> 
+    </body>
+</html>
