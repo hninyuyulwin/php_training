@@ -1,5 +1,5 @@
 <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_FILES['upload']) {
+    if (($_SERVER['REQUEST_METHOD'] == 'POST' || $_FILES['upload'])) {
         $dir = $_POST['create'];
 
         $errors = [];
@@ -85,12 +85,11 @@
                 <input type="file" name="image" id="">
                 <br><br>
                 <input class="input-text" type="text" name="create" placeholder="Enter Folder Name">
-                <span class="error">* <?php echo $input_Err;?></span>
-
+                <span class="error">* <?php echo empty($input_Err) ? '' : $input_Err;?></span>
                 <br><br>
                 <input class="btn" type="submit" name="upload" value="Upload Image">
             </form>
-            <span class="error"><?php print_r($arr_Errs);?></span>
+            <span class="error"><?php echo empty($arr_Errs) ? '' : print_r($arr_Errs);?></span>
             <h3 class="success"><?php echo $success; ?></h3>
         </fieldset>
     </body>
