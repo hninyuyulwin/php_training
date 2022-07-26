@@ -46,19 +46,20 @@
     </script>
 </head>
 <body class="bg-dark">
-    <div class="row">
-        <div class="col-lg-9 m-auto mt-5">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Showing User Age Pie Chart</h3>
-                </div>
-                <div class="card-body">
-                    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 m-auto mt-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Showing User Age Pie Chart</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="piechart" style="width: 900px; height: 500px;"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
 
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
