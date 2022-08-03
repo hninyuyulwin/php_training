@@ -14,20 +14,20 @@ use App\Http\Controllers\MovieController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('movies',[MovieController::class,'index']);
+Route::get('movies',[MovieController::class,'showAllMovie']);
 Route::get('movies/create',[MovieController::class,'create']);
-Route::post('moives/upload',[MovieController::class,'store']);
-Route::get('movies/{id}',[MovieController::class,'show']);
-Route::get('movies/{id}/edit',[MovieController::class,'edit']);
-Route::put('movies/{id}',[MovieController::class,'update']);
-Route::delete('movies/{id}',[MovieController::class,'delete']);
+Route::post('moives/upload',[MovieController::class,'movieStore']);
+Route::get('movies/{id}',[MovieController::class,'movieShow']);
+Route::get('movies/{id}/edit',[MovieController::class,'movieEdit']);
+Route::put('movies/{id}',[MovieController::class,'movieUpdate']);
+Route::delete('movies/{id}',[MovieController::class,'movieDelete']);
 
-Route::get('genres',[GenreController::class,'index']);
+Route::get('genres',[GenreController::class,'showAll']);
 Route::get('genres/create',[GenreController::class,'create']);
-Route::post('genres/upload',[GenreController::class,'store']);
-Route::get('genres/{id}/edit',[GenreController::class,'edit']);
-Route::put('genres/{id}',[GenreController::class,'update']);
-Route::delete('genres/{id}',[GenreController::class,'delete']);
+Route::post('genres/upload',[GenreController::class,'storeGenre']);
+Route::get('genres/{id}/edit',[GenreController::class,'editGenre']);
+Route::put('genres/{id}',[GenreController::class,'updateGenre']);
+Route::delete('genres/{id}',[GenreController::class,'deleteGenre']);
 
 Route::get('/', function () {
     return view('welcome');

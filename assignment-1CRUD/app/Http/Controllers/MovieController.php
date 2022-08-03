@@ -15,41 +15,41 @@ class MovieController extends Controller
     {
         $this->movieInterface = $movieServiceInterface;
     }
-    public function index()
+    public function showAllMovie()
     {
         $movie = $this->movieInterface->showAllMovie();
-        return view('movie/home',compact('movie'));
+        return view('movie.home',compact('movie'));
     }
     public function create()
     {
         $genres = $this->movieInterface->showGenre();
-        return view('movie/create',compact('genres'));
+        return view('movie.create',compact('genres'));
     }
-    public function store(Request $request)
+    public function movieStore(Request $request)
     {
-        $movie = $this->movieInterface->movieStore($request);
+        $this->movieInterface->movieStore($request);
         return redirect('/movies');
     }
-    public function show($id)
+    public function movieShow($id)
     {
         $movie = $this->movieInterface->movieShow($id);
         $genres = $this->movieInterface->showGenre();
-        return view('movie/show',compact('movie','genres'));
+        return view('movie.show',compact('movie','genres'));
     }
-    public function edit($id)
+    public function movieEdit($id)
     {
         $movie = $this->movieInterface->movieEdit($id);
         $genres = $this->movieInterface->showGenre();
-        return view('movie/edit',compact('movie','genres'));
+        return view('movie.edit',compact('movie','genres'));
     }
-    public function update(Request $request,$id)
+    public function movieUpdate(Request $request,$id)
     {
-        $movie = $this->movieInterface->movieUpdate($request,$id);
+        $this->movieInterface->movieUpdate($request,$id);
         return redirect('/movies');
     }
-    public function delete($id)
+    public function movieDelete($id)
     {
-        $movie = $this->movieInterface->movieDelete($id);
+        $this->movieInterface->movieDelete($id);
         return redirect('/movies');
     }
 }

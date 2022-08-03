@@ -13,34 +13,34 @@ class GenreController extends Controller
     {
         $this->genreInterface = $genreServiceInterface;
     }
-    public function index()
+    public function showAll()
     {
 
         $genre = $this->genreInterface->showAll();
-        return view('genre/home',compact('genre'));
+        return view('genre.home',compact('genre'));
     }
     public function create()
     {
-        return view('genre/create');
+        return view('genre.create');
     }
-    public function store(Request $request)
+    public function storeGenre(Request $request)
     {
-        $genre = $this->genreInterface->storeGenre($request);
+        $this->genreInterface->storeGenre($request);
         return redirect('/genres');
     }
-    public function edit($id)
+    public function editGenre($id)
     {
         $genre = $this->genreInterface->editGenre($id);
-        return view('genre/edit',compact('genre'));
+        return view('genre.edit',compact('genre'));
     }
-    public function update(Request $request,$id)
+    public function updateGenre(Request $request,$id)
     {
-        $genre = $this->genreInterface->updateGenre($request,$id);
+        $this->genreInterface->updateGenre($request,$id);
         return redirect('/genres');
     }
-    public function delete($id)
+    public function deleteGenre($id)
     {
-        $genre = $this->genreInterface->deleteGenre($id);
+        $this->genreInterface->deleteGenre($id);
         return redirect('/genres');
     }
 }
