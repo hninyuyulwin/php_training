@@ -29,6 +29,10 @@ Route::get('genres/{id}/edit',[GenreController::class,'editGenre']);
 Route::put('genres/{id}',[GenreController::class,'updateGenre']);
 Route::delete('genres/{id}',[GenreController::class,'deleteGenre']);
 
+Route::get('/file-import',[MovieController::class,'importView'])->name('import-view');
+Route::post('/import',[MovieController::class,'import'])->name('import');
+Route::get('/export-movies',[MovieController::class,'exportUsers'])->name('export-movies');
+
 Route::get('/', function () {
     return view('welcome');
 });

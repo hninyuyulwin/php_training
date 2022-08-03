@@ -1,5 +1,6 @@
 @extends('../layouts')
 @section('content')
+    <a href="/file-import" class="btn btn-info btn-sm mb-4">Import or Export File</a>
     <div class="card">
         <div  class="card-header">
             <h3>Movies & Series Lists</h3>
@@ -39,5 +40,4 @@
             </table>
         </div>
     </div>
-    
 @endsection
