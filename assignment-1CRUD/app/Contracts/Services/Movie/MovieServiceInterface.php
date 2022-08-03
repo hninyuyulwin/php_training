@@ -18,5 +18,9 @@ interface MovieServiceInterface
     public function movieUpdate(Request $request,$id);
 
     public function movieDelete($id);
+
+    public function import($request);
+    
+    public function exportUsers(Request $request);
 }
 ?>

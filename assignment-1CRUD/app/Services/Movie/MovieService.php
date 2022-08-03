@@ -48,5 +48,15 @@ class MovieService implements MovieServiceInterface
     {
         return $this->movieDao->movieDelete($id);
     }
+
+    public function import($request)
+    {
+        return $this->movieDao->import($request);
+    }
+
+    public function exportUsers(Request $request)
+    {
+        return $this->movieDao->exportUsers($request);
+    }    
 }
 ?>

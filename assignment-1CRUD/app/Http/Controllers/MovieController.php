@@ -63,11 +63,11 @@ class MovieController extends Controller
     }
 
     public function import(Request $request){
-        Excel::import(new ImportMovie, $request->file('file')->store('files'));
+        $this->movieInterface->import($request);
         return redirect()->back();
     }
 
     public function exportUsers(Request $request){
-        return Excel::download(new ExportMovie, 'movies.xlsx');
+        return $this->movieInterface->exportUsers($request);
     }
 }

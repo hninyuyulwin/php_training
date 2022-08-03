@@ -6,6 +6,10 @@ use App\Models\Movie;
 use Illuminate\Http\Request;
 use App\Contracts\Dao\Movie\MovieDaoInterface;
 
+use App\Imports\ImportMovie;
+use App\Exports\ExportMovie;
+use Maatwebsite\Excel\Facades\Excel;
+
 class MovieDao implements MovieDaoInterface
 {
     public function showAllMovie()
@@ -71,6 +75,16 @@ class MovieDao implements MovieDaoInterface
     {
         $movie = Movie::findOrFail($id)->delete();
         return $movie;
+    }
+
+    public function import($request)
+    {
+        return Excel::import(new ImportMovie, $request->file('file')->store('files'));
+    }
+
+    public function exportUsers(Request $request)
+    {
+        return Excel::download(new ExportMovie, 'movies.xlsx');
     }
 }
 
