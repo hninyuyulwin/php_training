@@ -5,7 +5,7 @@
             <h3>Create Genre</h3>
         </div>
         <div class="card-body">
-            <a href="/genres" class="btn btn-success mb-3">Back</a>
+            <a href="{{route('genres.index')}}" class="btn btn-success mb-3">Back</a>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -15,7 +15,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="/genres/upload" method="post">
+            <form action="{{route('genres.store')}}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="">Enter Genre Name :</label>

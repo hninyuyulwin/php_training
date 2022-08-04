@@ -20,7 +20,7 @@ class MovieController extends Controller
     {
         $this->movieInterface = $movieServiceInterface;
     }
-    public function showAllMovie()
+    public function index()
     {
         $movie = $this->movieInterface->showAllMovie();
         return view('movie.home',compact('movie'));
@@ -30,34 +30,35 @@ class MovieController extends Controller
         $genres = $this->movieInterface->showGenre();
         return view('movie.create',compact('genres'));
     }
-    public function movieStore(Request $request)
+    public function store(Request $request)
     {
         $this->movieInterface->movieStore($request);
-        return redirect('/movies');
+        return redirect()->route('movies.index')->with('message','Movie Review Created Success!');
     }
-    public function movieShow($id)
+    public function show($id)
     {
         $movie = $this->movieInterface->movieShow($id);
         $genres = $this->movieInterface->showGenre();
         return view('movie.show',compact('movie','genres'));
     }
-    public function movieEdit($id)
+    public function edit($id)
     {
         $movie = $this->movieInterface->movieEdit($id);
         $genres = $this->movieInterface->showGenre();
         return view('movie.edit',compact('movie','genres'));
     }
-    public function movieUpdate(Request $request,$id)
+    public function update(Request $request,$id)
     {
         $this->movieInterface->movieUpdate($request,$id);
-        return redirect('/movies');
+        return redirect()->route('movies.index')->with('message','Movie Reivew Updated Success!');
     }
-    public function movieDelete($id)
+    public function destroy($id)
     {
         $this->movieInterface->movieDelete($id);
-        return redirect('/movies');
+        return redirect()->route('movies.index')->with('message','Movie Review Deleted Success!');
     }
 
+    //Import & Export
     public function importView(Request $request){
         return view('importFile');
     }

@@ -14,20 +14,21 @@ use App\Http\Controllers\MovieController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('movies',[MovieController::class,'showAllMovie']);
-Route::get('movies/create',[MovieController::class,'create']);
-Route::post('moives/upload',[MovieController::class,'movieStore']);
-Route::get('movies/{id}',[MovieController::class,'movieShow']);
-Route::get('movies/{id}/edit',[MovieController::class,'movieEdit']);
-Route::put('movies/{id}',[MovieController::class,'movieUpdate']);
-Route::delete('movies/{id}',[MovieController::class,'movieDelete']);
+Route::get('movies',[MovieController::class,'index'])->name('movies.index');
+Route::get('movies/create',[MovieController::class,'create'])->name('movies.create');
+Route::post('moives/upload',[MovieController::class,'store'])->name('movies.store');
 
-Route::get('genres',[GenreController::class,'showAll']);
-Route::get('genres/create',[GenreController::class,'create']);
-Route::post('genres/upload',[GenreController::class,'storeGenre']);
-Route::get('genres/{id}/edit',[GenreController::class,'editGenre']);
-Route::put('genres/{id}',[GenreController::class,'updateGenre']);
-Route::delete('genres/{id}',[GenreController::class,'deleteGenre']);
+Route::get('movies/{id}',[MovieController::class,'show'])->name('movies.show');
+Route::get('movies/{id}/edit',[MovieController::class,'edit'])->name('movies.edit');
+Route::put('movies/{id}',[MovieController::class,'update'])->name('movies.update');
+Route::delete('movies/{id}',[MovieController::class,'destroy'])->name('movies.destroy');
+
+Route::get('genres',[GenreController::class,'index'])->name('genres.index');
+Route::get('genres/create',[GenreController::class,'create'])->name('genres.create');
+Route::post('genres/upload',[GenreController::class,'store'])->name('genres.store');
+Route::get('genres/{id}/edit',[GenreController::class,'edit'])->name('genres.edit');
+Route::put('genres/{id}',[GenreController::class,'update'])->name('genres.update');
+Route::delete('genres/{id}',[GenreController::class,'delete'])->name('genres.destroy');
 
 Route::get('/file-import',[MovieController::class,'importView'])->name('import-view');
 Route::post('/import',[MovieController::class,'import'])->name('import');

@@ -1,6 +1,6 @@
 @extends('../layouts')
 @section('content')
-<a href="/genres" class="btn btn-primary mb-3">Back</a>
+<a href="{{route('genres.index')}}" class="btn btn-primary mb-3">Back</a>
     <div class="card">
         <div  class="card-header">
             <h3>Edit Genre</h3>
@@ -15,7 +15,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="/genres/{{$genre->id}}" method="post">
+            <form action="{{route('genres.update',$genre->id)}}" method="post">
                 @csrf
                 @method('PUT')
                 <div class="form-group">

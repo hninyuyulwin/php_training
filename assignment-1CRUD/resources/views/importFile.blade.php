@@ -3,7 +3,7 @@
     <div class="card col-lg-6 m-auto">
         <div class="card-header">
             <h4 class="mb-4">Import or Export Excel File</h4>
-            <a href="/movies" class="btn btn-warning btn-sm">Go to check imported datas</a>
+            <a href="{{route('movies.index')}}" class="btn btn-warning btn-sm">Go to check imported datas</a>
         </div>
         <div class="card-body">
             <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">

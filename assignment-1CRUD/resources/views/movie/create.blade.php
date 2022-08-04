@@ -5,7 +5,7 @@
             <h3>Create Movies & Series</h3>
         </div>
         <div class="card-body">
-            <a href="/movies" class="btn btn-success mb-3">Back</a>
+            <a href="{{route('movies.index')}}" class="btn btn-success mb-3">Back</a>
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -16,7 +16,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="/moives/upload" method="post">
+                <form action="{{route('movies.store')}}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="">Enter Movie or Serie Name :</label>
