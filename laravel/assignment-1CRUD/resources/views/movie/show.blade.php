@@ -1,6 +1,6 @@
 @extends('../layouts')
 @section('content')
-    <a href="/movies" class="btn btn-primary mb-3">Back</a>
+    <a href="{{route('movies.index')}}" class="btn btn-primary mb-3">Back</a>
     <div class="card">
         <div  class="card-header">
             <h3 class="text-success">Movies or Series Review</h3>

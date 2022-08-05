@@ -20,7 +20,7 @@ class MovieController extends Controller
     {
         $this->movieInterface = $movieServiceInterface;
     }
-    public function index()
+    public function index(Request $request)
     {
         $movie = $this->movieInterface->showAllMovie();
         return view('movie.home',compact('movie'));
