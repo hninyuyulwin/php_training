@@ -30,7 +30,3 @@ Route::get('/', function () {
 });
 
 //Route for mailing
-Route::get('/email',function(){
-    Mail::to('laltnadi@gmail.com')->send(new WelcomeMail());
-    return new WelcomeMail();
-});
